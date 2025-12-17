@@ -1,3 +1,5 @@
+
+
 // icons
 import {
   FaHtml5,
@@ -17,7 +19,7 @@ import {
 
 
 //  data
-const aboutData = [
+export const aboutData = [
   {
     title: 'skills',
     info: [
@@ -88,7 +90,12 @@ const aboutData = [
   },
 ];
 
+
+
+
+
 const About = () => {
+
   return <div>About</div>;
 };
 
