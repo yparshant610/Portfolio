@@ -1,5 +1,6 @@
 //import swiper react components
 import { Swiper, SwiperSlide } from "swiper/react";
+import Link from "next/link";
 
 //import swiper styles
 import "swiper/css";
@@ -12,7 +13,7 @@ import {
   RxPencil2,
   RxDesktop,
   RxReader,
-  RxRocket,
+  RxCube,
   RxArrowTopRight,
 } from "react-icons/rx";
 
@@ -24,27 +25,32 @@ export const serviceData = [
   {
     icon: <RxCrop />,
     title: "Branding",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Crafting unique visual identities that define your business and resonate with audiences.",
   },
   {
     icon: <RxPencil2 />,
     title: "Design",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Creating intuitive and visually stunning interfaces that engage and convert users.",
   },
   {
     icon: <RxDesktop />,
     title: "Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Building robust, scalable, and high-performance websites tailored to your specific needs.",
   },
   {
     icon: <RxReader />,
     title: "Copywriting",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description:
+      "Compelling narratives and persuasive content designed to articulate your value clearly.",
   },
   {
-    icon: <RxRocket />,
-    title: "SEO",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    icon: <RxCube />,
+    title: "3D Modelling",
+    description:
+      "High-quality 3D assets and visualizations that bring your abstract concepts to life.",
   },
 ];
 
@@ -71,19 +77,23 @@ const ServiceSlider = () => {
       {serviceData.map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <div className=" bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer">
+            <Link href={`/services/${item.title.toLowerCase().replace(/ /g, '-')}`}>
+            <div className="bg-[rgba(65,47,123,0.15)] h-full rounded-lg px-6 py-8 flex flex-col justify-between sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89, 65, 169, 0.15)] transition-all duration-300">
               {/* icons */}
-              <div className="w-16 h-16">{item.icon}</div>
+              <div className="text-4xl text-accent mb-4">{item.icon}</div>
               {/* title & desc*/}
-              <div className="">
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
+              <div className="mb-8">
+                <div className=" mb-2 text-lg">{item.title}</div>
+                <p className="max-w-[350px] leading-normal">
+                  {item.description}
+                </p>
               </div>
               {/* arrow */}
               <div className="text-3xl">
-                <RxArrowTopRight />
+                <RxArrowTopRight className=" group-hover:rotate-45 group-hover:text-accent transition-all duration-300" />
               </div>
             </div>
+            </Link>
           </SwiperSlide>
         );
       })}
