@@ -210,42 +210,44 @@ const About = () => {
             })}
           </div>
           <motion.div
-            key={index} 
-            variants={fadeIn('up', 0.4)}
-            initial='hidden'
-            animate='show'
-            exit='hidden'
-            className='py-4 xl:py-8 flex flex-col gap-y-6 xl:gap-y-8 items-center xl:items-start'
+            key={index}
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            animate="show"
+            exit="hidden"
+            className="py-4 xl:py-8 flex flex-col gap-y-6 xl:gap-y-8 items-center xl:items-start"
           >
             {aboutData[index].info.map((item, itemIndex) => {
               return (
-                <div
-                  key={itemIndex}
-                  className='flex flex-col gap-y-2'
-                >
-                  <div className='text-lg font-semibold text-white'>{item.title}</div>
-                  <div className='flex items-center gap-x-4 text-sm text-white/80'>
+                <div key={itemIndex} className="flex flex-col gap-y-2">
+                  <div className="text-lg font-semibold text-white">
+                    {item.title}
+                  </div>
+                  <div className="flex items-center gap-x-4 text-sm text-white/80">
                     {item.stage && <span>{item.stage}</span>}
                     {item.stage && item.location && <span>|</span>}
-                    {item.location && <span className='italic'>{item.location}</span>}
+                    {item.location && (
+                      <span className="italic">{item.location}</span>
+                    )}
                   </div>
-                  {
-                    item.icons && (
-                      <div
-                        className={`flex gap-x-4 ${
-                          aboutData[index].title === 'skills'
-                            ? 'flex-wrap w-[240px] gap-y-4 pt-2'
-                            : ''
-                        }`}
-                      >
-                        {item.icons.map((icon, itemIndex) => (
-                          <div key={itemIndex} className='text-5xl text-white hover:text-accent transition-all duration-300'>
-                            {icon}
-                          </div>
-                        ))}
-                      </div>
-                    )
-                  }
+                  {item.icons && (
+                    <div
+                      className={`flex gap-x-4 ${
+                        aboutData[index].title === "skills"
+                          ? "flex-wrap w-[240px] gap-y-4 pt-2"
+                          : ""
+                      }`}
+                    >
+                      {item.icons.map((icon, itemIndex) => (
+                        <div
+                          key={itemIndex}
+                          className="text-5xl text-white hover:text-accent transition-all duration-300"
+                        >
+                          {icon}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               );
             })}
