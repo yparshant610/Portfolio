@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
   return (
     <div
       ref={layoutRef}
-      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
+      className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-scroll xl:overflow-y-hidden`}
     >
       <TopLeftImg />
       <Nav visible={visible} />
