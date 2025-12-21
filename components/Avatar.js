@@ -5,7 +5,7 @@ const Avatar = () => {
   return (
     <div className="hidden xl:flex xl:max-w-none ">
       <Image
-        src={"/Avatar.png"}
+        src={"/avatar.png"}
         width={738}
         height={672}
         alt=""
