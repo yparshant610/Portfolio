@@ -41,20 +41,18 @@ const Home = () => {
             Application Development and Web Development.
           </motion.p>
           {/* Buttons */}
-          <motion.div
-            variants={fadeIn("down", 0.4)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 xl:gap-8"
-          >
-            <div className="relative">
+          <div className="flex flex-col xl:flex-row items-center justify-center xl:justify-start gap-4 xl:gap-8 w-full">
+            <motion.div
+              variants={fadeIn("down", 0.4)}
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              className="flex flex-row items-center justify-center xl:justify-start gap-4 xl:gap-8"
+            >
               <ProjectsBtn />
-            </div>
-            <div className="relative">
               <ResumeBtn />
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
       {/* image */}
