@@ -2,7 +2,9 @@ import Image from "next/image";
 
 import PartileContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
+import ResumeBtn from "../components/ResumeBtn";
 import Avatar from "../components/Avatar";
+import { useState } from "react";
 
 import { easeInOut, motion } from "framer-motion";
 
@@ -38,18 +40,20 @@ const Home = () => {
             Explore my latest projects and articles, showcasing my expertise in
             Application Development and Web Development.
           </motion.p>
-          {/* btn */}
-          <div className="flex justify-center xl:hidden relative">
-            <ProjectsBtn />
-          </div>
+          {/* Buttons */}
           <motion.div
             variants={fadeIn("down", 0.4)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden xl:flex"
+            className="flex flex-col sm:flex-row justify-center xl:justify-start items-center gap-4 xl:gap-8"
           >
-            <ProjectsBtn />
+            <div className="relative">
+              <ProjectsBtn />
+            </div>
+            <div className="relative">
+              <ResumeBtn />
+            </div>
           </motion.div>
         </div>
       </div>
