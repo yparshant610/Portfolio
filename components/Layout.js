@@ -4,6 +4,10 @@ import Nav from "../components/Nav";
 import Header from "../components/Header";
 import TopLeftImg from "../components/TopLeftImg";
 
+//vercel analysis
+import { Analytics } from "@vercel/analytics/next"
+
+
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
@@ -55,6 +59,7 @@ const Layout = ({ children }) => {
       <Nav visible={visible} />
       <Header />
       {children}
+      <Analytics />
     </div>
   );
 };
